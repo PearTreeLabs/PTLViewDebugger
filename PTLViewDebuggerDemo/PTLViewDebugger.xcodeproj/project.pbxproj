@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D31B616E1839719000772057 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31B616D1839719000772057 /* Foundation.framework */; };
+		D31B61701839719000772057 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31B616F1839719000772057 /* CoreGraphics.framework */; };
+		D31B61721839719000772057 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31B61711839719000772057 /* UIKit.framework */; };
+		D31B61781839719000772057 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D31B61761839719000772057 /* InfoPlist.strings */; };
+		D31B617A1839719000772057 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D31B61791839719000772057 /* main.m */; };
+		D31B617E1839719000772057 /* PTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D31B617D1839719000772057 /* PTLAppDelegate.m */; };
+		D31B61801839719000772057 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D31B617F1839719000772057 /* Images.xcassets */; };
+		D31B61871839719000772057 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31B61861839719000772057 /* XCTest.framework */; };
+		D31B61881839719000772057 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31B616D1839719000772057 /* Foundation.framework */; };
+		D31B61891839719000772057 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31B61711839719000772057 /* UIKit.framework */; };
+		D31B61911839719000772057 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D31B618F1839719000772057 /* InfoPlist.strings */; };
+		D31B61931839719000772057 /* PTLViewDebuggerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D31B61921839719000772057 /* PTLViewDebuggerDemoTests.m */; };
+		D351391F183971DD00331B22 /* UIView+PTLViewDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = D351391E183971DD00331B22 /* UIView+PTLViewDebugger.m */; };
+		D3513922183971F800331B22 /* UIColor+PTLViewDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = D3513921183971F800331B22 /* UIColor+PTLViewDebugger.m */; };
+		D35139251839748300331B22 /* PTLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35139241839748300331B22 /* PTLViewController.m */; };
+		D351392B18397B3400331B22 /* NSObject+PTLSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = D351392A18397B3400331B22 /* NSObject+PTLSwizzle.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D31B618A1839719000772057 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D34C00F61839710200CA0971 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D31B61691839719000772057;
+			remoteInfo = PTLViewDebuggerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D31B616A1839719000772057 /* PTLViewDebuggerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTLViewDebuggerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31B616D1839719000772057 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D31B616F1839719000772057 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D31B61711839719000772057 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D31B61751839719000772057 /* PTLViewDebuggerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PTLViewDebuggerDemo-Info.plist"; sourceTree = "<group>"; };
+		D31B61771839719000772057 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D31B61791839719000772057 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D31B617B1839719000772057 /* PTLViewDebuggerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PTLViewDebuggerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		D31B617C1839719000772057 /* PTLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTLAppDelegate.h; sourceTree = "<group>"; };
+		D31B617D1839719000772057 /* PTLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTLAppDelegate.m; sourceTree = "<group>"; };
+		D31B617F1839719000772057 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D31B61851839719000772057 /* PTLViewDebuggerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTLViewDebuggerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31B61861839719000772057 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D31B618E1839719000772057 /* PTLViewDebuggerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PTLViewDebuggerDemoTests-Info.plist"; sourceTree = "<group>"; };
+		D31B61901839719000772057 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D31B61921839719000772057 /* PTLViewDebuggerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTLViewDebuggerDemoTests.m; sourceTree = "<group>"; };
+		D351391D183971DD00331B22 /* UIView+PTLViewDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PTLViewDebugger.h"; sourceTree = "<group>"; };
+		D351391E183971DD00331B22 /* UIView+PTLViewDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PTLViewDebugger.m"; sourceTree = "<group>"; };
+		D3513920183971F800331B22 /* UIColor+PTLViewDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PTLViewDebugger.h"; sourceTree = "<group>"; };
+		D3513921183971F800331B22 /* UIColor+PTLViewDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PTLViewDebugger.m"; sourceTree = "<group>"; };
+		D35139231839748300331B22 /* PTLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTLViewController.h; sourceTree = "<group>"; };
+		D35139241839748300331B22 /* PTLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTLViewController.m; sourceTree = "<group>"; };
+		D351392918397B3400331B22 /* NSObject+PTLSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PTLSwizzle.h"; sourceTree = "<group>"; };
+		D351392A18397B3400331B22 /* NSObject+PTLSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PTLSwizzle.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D31B61671839719000772057 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31B61701839719000772057 /* CoreGraphics.framework in Frameworks */,
+				D31B61721839719000772057 /* UIKit.framework in Frameworks */,
+				D31B616E1839719000772057 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31B61821839719000772057 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31B61871839719000772057 /* XCTest.framework in Frameworks */,
+				D31B61891839719000772057 /* UIKit.framework in Frameworks */,
+				D31B61881839719000772057 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D31B616B1839719000772057 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D31B616A1839719000772057 /* PTLViewDebuggerDemo.app */,
+				D31B61851839719000772057 /* PTLViewDebuggerDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D31B616C1839719000772057 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D31B616D1839719000772057 /* Foundation.framework */,
+				D31B616F1839719000772057 /* CoreGraphics.framework */,
+				D31B61711839719000772057 /* UIKit.framework */,
+				D31B61861839719000772057 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D31B61731839719000772057 /* PTLViewDebuggerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D31B617C1839719000772057 /* PTLAppDelegate.h */,
+				D31B617D1839719000772057 /* PTLAppDelegate.m */,
+				D31B617F1839719000772057 /* Images.xcassets */,
+				D31B61741839719000772057 /* Supporting Files */,
+				D35139231839748300331B22 /* PTLViewController.h */,
+				D35139241839748300331B22 /* PTLViewController.m */,
+			);
+			path = PTLViewDebuggerDemo;
+			sourceTree = "<group>";
+		};
+		D31B61741839719000772057 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D31B61751839719000772057 /* PTLViewDebuggerDemo-Info.plist */,
+				D31B61761839719000772057 /* InfoPlist.strings */,
+				D31B61791839719000772057 /* main.m */,
+				D31B617B1839719000772057 /* PTLViewDebuggerDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D31B618C1839719000772057 /* PTLViewDebuggerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D31B61921839719000772057 /* PTLViewDebuggerDemoTests.m */,
+				D31B618D1839719000772057 /* Supporting Files */,
+			);
+			path = PTLViewDebuggerDemoTests;
+			sourceTree = "<group>";
+		};
+		D31B618D1839719000772057 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D31B618E1839719000772057 /* PTLViewDebuggerDemoTests-Info.plist */,
+				D31B618F1839719000772057 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D34C00F51839710200CA0971 = {
+			isa = PBXGroup;
+			children = (
+				D351391C183971C100331B22 /* PTLViewDebugger */,
+				D31B61731839719000772057 /* PTLViewDebuggerDemo */,
+				D31B618C1839719000772057 /* PTLViewDebuggerDemoTests */,
+				D31B616C1839719000772057 /* Frameworks */,
+				D31B616B1839719000772057 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D351391C183971C100331B22 /* PTLViewDebugger */ = {
+			isa = PBXGroup;
+			children = (
+				D351392918397B3400331B22 /* NSObject+PTLSwizzle.h */,
+				D351392A18397B3400331B22 /* NSObject+PTLSwizzle.m */,
+				D3513920183971F800331B22 /* UIColor+PTLViewDebugger.h */,
+				D3513921183971F800331B22 /* UIColor+PTLViewDebugger.m */,
+				D351391D183971DD00331B22 /* UIView+PTLViewDebugger.h */,
+				D351391E183971DD00331B22 /* UIView+PTLViewDebugger.m */,
+			);
+			name = PTLViewDebugger;
+			path = ../PTLViewDebugger;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D31B61691839719000772057 /* PTLViewDebuggerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31B61981839719000772057 /* Build configuration list for PBXNativeTarget "PTLViewDebuggerDemo" */;
+			buildPhases = (
+				D31B61661839719000772057 /* Sources */,
+				D31B61671839719000772057 /* Frameworks */,
+				D31B61681839719000772057 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PTLViewDebuggerDemo;
+			productName = PTLViewDebuggerDemo;
+			productReference = D31B616A1839719000772057 /* PTLViewDebuggerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D31B61841839719000772057 /* PTLViewDebuggerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31B61991839719000772057 /* Build configuration list for PBXNativeTarget "PTLViewDebuggerDemoTests" */;
+			buildPhases = (
+				D31B61811839719000772057 /* Sources */,
+				D31B61821839719000772057 /* Frameworks */,
+				D31B61831839719000772057 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D31B618B1839719000772057 /* PBXTargetDependency */,
+			);
+			name = PTLViewDebuggerDemoTests;
+			productName = PTLViewDebuggerDemoTests;
+			productReference = D31B61851839719000772057 /* PTLViewDebuggerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D34C00F61839710200CA0971 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					D31B61841839719000772057 = {
+						TestTargetID = D31B61691839719000772057;
+					};
+				};
+			};
+			buildConfigurationList = D34C00F91839710200CA0971 /* Build configuration list for PBXProject "PTLViewDebugger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D34C00F51839710200CA0971;
+			productRefGroup = D31B616B1839719000772057 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D31B61691839719000772057 /* PTLViewDebuggerDemo */,
+				D31B61841839719000772057 /* PTLViewDebuggerDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D31B61681839719000772057 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31B61781839719000772057 /* InfoPlist.strings in Resources */,
+				D31B61801839719000772057 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31B61831839719000772057 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31B61911839719000772057 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D31B61661839719000772057 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3513922183971F800331B22 /* UIColor+PTLViewDebugger.m in Sources */,
+				D351392B18397B3400331B22 /* NSObject+PTLSwizzle.m in Sources */,
+				D35139251839748300331B22 /* PTLViewController.m in Sources */,
+				D31B617A1839719000772057 /* main.m in Sources */,
+				D31B617E1839719000772057 /* PTLAppDelegate.m in Sources */,
+				D351391F183971DD00331B22 /* UIView+PTLViewDebugger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31B61811839719000772057 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31B61931839719000772057 /* PTLViewDebuggerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D31B618B1839719000772057 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D31B61691839719000772057 /* PTLViewDebuggerDemo */;
+			targetProxy = D31B618A1839719000772057 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D31B61761839719000772057 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D31B61771839719000772057 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D31B618F1839719000772057 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D31B61901839719000772057 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D31B61941839719000772057 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PTLViewDebuggerDemo/PTLViewDebuggerDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PTLViewDebuggerDemo/PTLViewDebuggerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D31B61951839719000772057 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PTLViewDebuggerDemo/PTLViewDebuggerDemo-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PTLViewDebuggerDemo/PTLViewDebuggerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D31B61961839719000772057 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PTLViewDebuggerDemo.app/PTLViewDebuggerDemo";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PTLViewDebuggerDemo/PTLViewDebuggerDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PTLViewDebuggerDemoTests/PTLViewDebuggerDemoTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D31B61971839719000772057 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PTLViewDebuggerDemo.app/PTLViewDebuggerDemo";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PTLViewDebuggerDemo/PTLViewDebuggerDemo-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PTLViewDebuggerDemoTests/PTLViewDebuggerDemoTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		D34C00FA1839710200CA0971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D34C00FB1839710200CA0971 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D31B61981839719000772057 /* Build configuration list for PBXNativeTarget "PTLViewDebuggerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31B61941839719000772057 /* Debug */,
+				D31B61951839719000772057 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D31B61991839719000772057 /* Build configuration list for PBXNativeTarget "PTLViewDebuggerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31B61961839719000772057 /* Debug */,
+				D31B61971839719000772057 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D34C00F91839710200CA0971 /* Build configuration list for PBXProject "PTLViewDebugger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D34C00FA1839710200CA0971 /* Debug */,
+				D34C00FB1839710200CA0971 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D34C00F61839710200CA0971 /* Project object */;
+}
