@@ -21,7 +21,7 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
 + (void)load {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-    [UIView ptl_swizzleMethod:@selector(recursiveDescription) withMethod:@selector(ptl_recursiveDescription)];
+    [UIView ptl_swizzleMethod:@selector(description) withMethod:@selector(ptl_description)];
 #pragma clang diagnostic pop
 }
 
@@ -92,6 +92,7 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
 #pragma mark - Styled Description
 
 - (NSString *)ptl_description {
+    NSString *description = [self ptl_description];
     if ([objc_getAssociatedObject(self, (__bridge const void *)(kPTLViewDebuggerEnabled)) boolValue]) {
         UIColor *color = [UIColor colorWithCGColor:self.layer.borderColor];
         return [NSString stringWithFormat:@"%@fg%0.0f,%0.0f,%0.0f;%@%@fg;",
@@ -99,31 +100,10 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
                 [color ptl_red] * 255.0,
                 [color ptl_green] * 255.0,
                 [color ptl_blue] * 255.0,
-                self.description,
+                description,
                 kPTLColorEscapeSequence];
     }
-    return self.description;
-}
-
-- (NSString *)ptl_recursiveDescription {
-    return [self ptl_recursiveDescription:0];
-}
-
-- (NSString *)ptl_recursiveDescription:(NSUInteger)level {
-    NSString *padding = @"   | ";
-    NSMutableString *result = [[@"" stringByPaddingToLength:padding.length * level
-                                                 withString:padding
-                                            startingAtIndex:0] mutableCopy];
-    [result appendString:[self ptl_description]];
-
-    for (UIView *subview in self.subviews) {
-        NSString *description = [subview ptl_recursiveDescription:level + 1];
-        if (description) {
-            [result appendFormat:@"\n%@", description];
-        }
-    }
-
-    return [result copy];
+    return description;
 }
 
 @end
