@@ -29,7 +29,10 @@
     [super viewDidAppear:animated];
 
     [self.view ptl_showDebugBorder:YES];
-    DLog([self.view ptl_recursiveDescription]);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    NSLog(@"%@", [self.view performSelector:@selector(recursiveDescription)]);
+#pragma clang diagnostic pop
 }
 
 #pragma mark - UITableViewDatasource

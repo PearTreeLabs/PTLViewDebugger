@@ -18,6 +18,15 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
 
 @implementation UIView (PTLViewDebugger)
 
++ (void)load {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    [UIView ptl_swizzleMethod:@selector(recursiveDescription) withMethod:@selector(ptl_recursiveDescription)];
+#pragma clang diagnostic pop
+}
+
+#pragma mark - Debug Border
+
 - (CGFloat)ptl_minLineWidth {
     return (self.window.screen.scale == 0.0) ? 1.0 : 1.0 / (self.window.screen.scale);
 }
@@ -79,6 +88,8 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
         }
     }
 }
+
+#pragma mark - Styled Description
 
 - (NSString *)ptl_description {
     if ([objc_getAssociatedObject(self, (__bridge const void *)(kPTLViewDebuggerEnabled)) boolValue]) {
