@@ -22,7 +22,7 @@
     [super viewDidLoad];
 
     self.title = @"Characters";
-    self.items = @[@"Luke Skywalker", @"Han Solo", @"Chewbaca", @"Princess Leia", @"Obi-wan Kenobi", @"R2-D2", @"C-3P0"];
+    self.items = @[@"Luke Skywalker", @"Han Solo", @"Chewbacca", @"Princess Leia", @"Obi-wan Kenobi", @"R2-D2", @"C-3P0"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
