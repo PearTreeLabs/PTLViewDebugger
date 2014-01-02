@@ -19,9 +19,10 @@
 		D31B61891839719000772057 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31B61711839719000772057 /* UIKit.framework */; };
 		D31B61911839719000772057 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D31B618F1839719000772057 /* InfoPlist.strings */; };
 		D31B61931839719000772057 /* PTLViewDebuggerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D31B61921839719000772057 /* PTLViewDebuggerDemoTests.m */; };
+		D32AADC518751280003763F2 /* PTLAmbiguousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32AADC418751280003763F2 /* PTLAmbiguousViewController.m */; };
 		D351391F183971DD00331B22 /* UIView+PTLViewDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = D351391E183971DD00331B22 /* UIView+PTLViewDebugger.m */; };
 		D3513922183971F800331B22 /* UIColor+PTLViewDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = D3513921183971F800331B22 /* UIColor+PTLViewDebugger.m */; };
-		D35139251839748300331B22 /* PTLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35139241839748300331B22 /* PTLViewController.m */; };
+		D35139251839748300331B22 /* PTLBordersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35139241839748300331B22 /* PTLBordersViewController.m */; };
 		D351392B18397B3400331B22 /* NSObject+PTLSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = D351392A18397B3400331B22 /* NSObject+PTLSwizzle.m */; };
 /* End PBXBuildFile section */
 
@@ -52,12 +53,15 @@
 		D31B618E1839719000772057 /* PTLViewDebuggerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PTLViewDebuggerDemoTests-Info.plist"; sourceTree = "<group>"; };
 		D31B61901839719000772057 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D31B61921839719000772057 /* PTLViewDebuggerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTLViewDebuggerDemoTests.m; sourceTree = "<group>"; };
+		D32AADC318751280003763F2 /* PTLAmbiguousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTLAmbiguousViewController.h; sourceTree = "<group>"; };
+		D32AADC418751280003763F2 /* PTLAmbiguousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTLAmbiguousViewController.m; sourceTree = "<group>"; };
+		D32AADC618751342003763F2 /* PTLViewDebugger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTLViewDebugger.h; sourceTree = "<group>"; };
 		D351391D183971DD00331B22 /* UIView+PTLViewDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PTLViewDebugger.h"; sourceTree = "<group>"; };
 		D351391E183971DD00331B22 /* UIView+PTLViewDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PTLViewDebugger.m"; sourceTree = "<group>"; };
 		D3513920183971F800331B22 /* UIColor+PTLViewDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PTLViewDebugger.h"; sourceTree = "<group>"; };
 		D3513921183971F800331B22 /* UIColor+PTLViewDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PTLViewDebugger.m"; sourceTree = "<group>"; };
-		D35139231839748300331B22 /* PTLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTLViewController.h; sourceTree = "<group>"; };
-		D35139241839748300331B22 /* PTLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTLViewController.m; sourceTree = "<group>"; };
+		D35139231839748300331B22 /* PTLBordersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTLBordersViewController.h; sourceTree = "<group>"; };
+		D35139241839748300331B22 /* PTLBordersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTLBordersViewController.m; sourceTree = "<group>"; };
 		D351392918397B3400331B22 /* NSObject+PTLSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PTLSwizzle.h"; sourceTree = "<group>"; };
 		D351392A18397B3400331B22 /* NSObject+PTLSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PTLSwizzle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,8 +117,10 @@
 				D31B617D1839719000772057 /* PTLAppDelegate.m */,
 				D31B617F1839719000772057 /* Images.xcassets */,
 				D31B61741839719000772057 /* Supporting Files */,
-				D35139231839748300331B22 /* PTLViewController.h */,
-				D35139241839748300331B22 /* PTLViewController.m */,
+				D35139231839748300331B22 /* PTLBordersViewController.h */,
+				D35139241839748300331B22 /* PTLBordersViewController.m */,
+				D32AADC318751280003763F2 /* PTLAmbiguousViewController.h */,
+				D32AADC418751280003763F2 /* PTLAmbiguousViewController.m */,
 			);
 			path = PTLViewDebuggerDemo;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 		D351391C183971C100331B22 /* PTLViewDebugger */ = {
 			isa = PBXGroup;
 			children = (
+				D32AADC618751342003763F2 /* PTLViewDebugger.h */,
 				D351392918397B3400331B22 /* NSObject+PTLSwizzle.h */,
 				D351392A18397B3400331B22 /* NSObject+PTLSwizzle.m */,
 				D3513920183971F800331B22 /* UIColor+PTLViewDebugger.h */,
@@ -269,8 +276,9 @@
 			files = (
 				D3513922183971F800331B22 /* UIColor+PTLViewDebugger.m in Sources */,
 				D351392B18397B3400331B22 /* NSObject+PTLSwizzle.m in Sources */,
-				D35139251839748300331B22 /* PTLViewController.m in Sources */,
+				D35139251839748300331B22 /* PTLBordersViewController.m in Sources */,
 				D31B617A1839719000772057 /* main.m in Sources */,
+				D32AADC518751280003763F2 /* PTLAmbiguousViewController.m in Sources */,
 				D31B617E1839719000772057 /* PTLAppDelegate.m in Sources */,
 				D351391F183971DD00331B22 /* UIView+PTLViewDebugger.m in Sources */,
 			);

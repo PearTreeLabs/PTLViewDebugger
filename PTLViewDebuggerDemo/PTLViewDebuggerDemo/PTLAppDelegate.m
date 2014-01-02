@@ -7,7 +7,8 @@
 //
 
 #import "PTLAppDelegate.h"
-#import "PTLViewController.h"
+#import "PTLBordersViewController.h"
+#import "PTLAmbiguousViewController.h"
 
 @implementation PTLAppDelegate
 
@@ -15,9 +16,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    PTLViewController *vc = [[PTLViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = nav;
+    PTLBordersViewController *borders = [[PTLBordersViewController alloc] init];
+    PTLAmbiguousViewController *ambiguous = [[PTLAmbiguousViewController alloc] init];
+
+    UITabBarController *tab = [[UITabBarController alloc] init];
+    tab.viewControllers = @[borders, ambiguous];
+    self.window.rootViewController = tab;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

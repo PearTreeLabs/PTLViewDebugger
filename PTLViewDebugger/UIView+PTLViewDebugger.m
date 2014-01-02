@@ -16,7 +16,7 @@ static NSString * const kPTLViewDebuggerEnabled = @"com.peartreelabs.viewdebugge
 static NSString * const kPTLViewDebuggerPreviousBorderColor = @"com.peartreelabs.viewdebugger.PTLViewDebuggerPreviousBorderColor";
 static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs.viewdebugger.PTLViewDebuggerPreviousBorderWidth";
 
-@implementation UIView (PTLViewDebugger)
+@implementation UIView (PTLViewDebugger_Colors)
 
 + (void)load {
 #pragma clang diagnostic push
@@ -124,6 +124,69 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
     }
 
     return [result copy];
+}
+
+@end
+
+static NSString * const kPTLAutoLayoutDanceTimer = @"PTLAutoLayoutDanceTimer";
+
+@interface UIView (PTLViewDebugger_AutoLayout_Private)
+
+@property (nonatomic, strong) NSTimer *ptl_autoLayoutDanceTimer;
+
+@end
+
+@implementation UIView (PTLViewDebugger_AutoLayout)
+
+- (NSTimer *)ptl_autoLayoutDanceTimer {
+    return objc_getAssociatedObject(self, (__bridge const void *)(kPTLAutoLayoutDanceTimer));
+}
+
+- (void)setPtl_autoLayoutDanceTimer:(NSTimer *)timer {
+    [self.ptl_autoLayoutDanceTimer invalidate];
+    objc_setAssociatedObject(self, (__bridge const void *)(kPTLAutoLayoutDanceTimer), timer, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (void)ptl_startAutoLayoutDance {
+    [self ptl_startAutoLayoutDance:NO];
+}
+
+- (void)ptl_stopAutoLayoutDance {
+    [self ptl_stopAutoLayoutDance:NO];
+}
+
+- (void)ptl_startAutoLayoutDance:(BOOL)includeSubviews {
+    // Ensure that we're on the main thread.
+    if (![NSThread isMainThread]) {
+        __weak typeof(self) weak_self = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weak_self ptl_startAutoLayoutDance:includeSubviews];
+        });
+        return;
+    }
+
+    // Dance, puppets! Dance!
+    self.ptl_autoLayoutDanceTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                                     target:self
+                                                                   selector:@selector(exerciseAmbiguityInLayout)
+                                                                   userInfo:nil
+                                                                    repeats:YES];
+
+    if (includeSubviews) {
+        for (UIView *view in self.subviews) {
+            [view ptl_startAutoLayoutDance:YES];
+        }
+    }
+}
+
+- (void)ptl_stopAutoLayoutDance:(BOOL)includeSubviews {
+    self.ptl_autoLayoutDanceTimer = nil;
+
+    if (includeSubviews) {
+        for (UIView *view in self.subviews) {
+            [view ptl_stopAutoLayoutDance:YES];
+        }
+    }
 }
 
 @end

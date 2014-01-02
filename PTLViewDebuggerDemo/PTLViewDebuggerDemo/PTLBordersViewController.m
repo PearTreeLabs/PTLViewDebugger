@@ -6,22 +6,30 @@
 //
 //
 
-#import "PTLViewController.h"
-#import "UIView+PTLViewDebugger.h"
+#import "PTLBordersViewController.h"
+#import "PTLViewDebugger.h"
 
-@interface PTLViewController ()
+@interface PTLBordersViewController ()
 
 @property (nonatomic, strong) NSArray *items;
 
 @end
 
-@implementation PTLViewController
+@implementation PTLBordersViewController
+
+- (id)init {
+	self = [super init];
+	if (self) {
+        self.tabBarItem.title = @"Borders";
+	}
+
+	return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    self.title = @"Characters";
     self.items = @[@"Luke Skywalker", @"Han Solo", @"Chewbacca", @"Princess Leia", @"Obi-wan Kenobi", @"R2-D2", @"C-3P0"];
 }
 
