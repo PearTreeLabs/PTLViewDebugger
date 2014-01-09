@@ -32,14 +32,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+    self.view.tintColor = [UIColor whiteColor];
+
     self.startButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self.startButton setBackgroundColor:[UIColor greenColor]];
     [self.startButton addTarget:self action:@selector(startTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.startButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.startButton];
 
     self.stopButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.stopButton setTitle:@"Stop" forState:UIControlStateNormal];
+    [self.stopButton setBackgroundColor:[UIColor redColor]];
     [self.stopButton addTarget:self action:@selector(stopTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.stopButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.stopButton];
@@ -55,6 +59,12 @@
                                                                       options:NSLayoutFormatAlignAllCenterY
                                                                       metrics:nil
                                                                         views:views]];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self.view ptl_identifyViewsWithAmbiguousLayout];
 }
 
 - (void)startTapped:(id)sender {
