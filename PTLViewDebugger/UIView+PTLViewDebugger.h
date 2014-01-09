@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 /**
- * Utility methods for debugging UIView layouts.
+ * Utility methods for annotating UIViews with colors.
  */
 @interface UIView (PTLViewDebugger_Colors)
 
@@ -24,11 +24,6 @@
 - (void)ptl_showDebugBorder;
 
 /**
- * Adds a randomly colored border to the view and all subviews.
- */
-- (void)ptl_showDebugBorder:(BOOL)trickleDown;
-
-/**
  * Removes any previously set border on the view.
  */
 - (void)ptl_hideDebugBorder;
@@ -36,7 +31,7 @@
 /**
  * Removes any previously set border on the view and all subviews.
  */
-- (void)ptl_hideDebugBorder:(BOOL)trickleDown;
+- (void)ptl_hideAllDebugBorders;
 
 /**
  * @return The default description for the view, styled with the currently shown debug border color.
@@ -47,6 +42,18 @@
  * @return The a string outlining the view hierarchy below of this view using ptl_description.
  */
 - (NSString *)ptl_recursiveDescription;
+
+@end
+
+/**
+ * Utility methods for debugging UIView layouts.
+ */
+@interface UIView (PTLViewDebugger_Layout)
+
+/**
+ * Adds a randomly colored border to the view and all subviews to help visually identify their layout.
+ */
+- (void)ptl_identifyViewLayout;
 
 @end
 

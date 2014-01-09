@@ -18,22 +18,7 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
 
 @implementation UIView (PTLViewDebugger_Colors)
 
-+ (void)load {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-    [UIView ptl_swizzleMethod:@selector(recursiveDescription) withMethod:@selector(ptl_recursiveDescription)];
-#pragma clang diagnostic pop
-}
-
-#pragma mark - Debug Border
-
-- (CGFloat)ptl_minLineWidth {
-    return (self.window.screen.scale == 0.0) ? 1.0 : 1.0 / (self.window.screen.scale);
-}
-
-- (void)ptl_showDebugBorder {
-    [self ptl_showDebugBorder:NO];
-}
+#pragma mark - Private
 
 - (void)ptl_showDebugBorder:(BOOL)trickleDown {
     if ([objc_getAssociatedObject(self, (__bridge const void *)(kPTLViewDebuggerEnabled)) boolValue]) {
@@ -69,10 +54,6 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
     }
 }
 
-- (void)ptl_hideDebugBorder {
-    [self ptl_hideDebugBorder:NO];
-}
-
 - (void)ptl_hideDebugBorder:(BOOL)trickleDown {
     if (![objc_getAssociatedObject(self, (__bridge const void *)(kPTLViewDebuggerEnabled)) boolValue]) {
         return;
@@ -87,6 +68,33 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
             [view ptl_hideDebugBorder:trickleDown];
         }
     }
+}
+
+#pragma mark - Setup
+
++ (void)load {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    [UIView ptl_swizzleMethod:@selector(recursiveDescription) withMethod:@selector(ptl_recursiveDescription)];
+#pragma clang diagnostic pop
+}
+
+#pragma mark - Debug Border
+
+- (CGFloat)ptl_minLineWidth {
+    return (self.window.screen.scale == 0.0) ? 1.0 : 1.0 / (self.window.screen.scale);
+}
+
+- (void)ptl_showDebugBorder {
+    [self ptl_showDebugBorder:NO];
+}
+
+- (void)ptl_hideDebugBorder {
+    [self ptl_hideDebugBorder:NO];
+}
+
+- (void)ptl_hideAllDebugBorders {
+    [self ptl_hideDebugBorder:YES];
 }
 
 #pragma mark - Styled Description
@@ -124,6 +132,16 @@ static NSString * const kPTLViewDebuggerPreviousBorderWidth = @"com.peartreelabs
     }
 
     return [result copy];
+}
+
+@end
+
+@implementation UIView (PTLViewDebugger_Layout)
+
+#pragma mark - Public
+
+- (void)ptl_identifyViewLayout {
+    [self ptl_showDebugBorder:YES];
 }
 
 @end
