@@ -138,6 +138,8 @@ static NSString * const kPTLAutoLayoutDanceTimer = @"PTLAutoLayoutDanceTimer";
 
 @implementation UIView (PTLViewDebugger_AutoLayout)
 
+#pragma mark - Private
+
 - (NSTimer *)ptl_autoLayoutDanceTimer {
     return objc_getAssociatedObject(self, (__bridge const void *)(kPTLAutoLayoutDanceTimer));
 }
@@ -145,6 +147,20 @@ static NSString * const kPTLAutoLayoutDanceTimer = @"PTLAutoLayoutDanceTimer";
 - (void)setPtl_autoLayoutDanceTimer:(NSTimer *)timer {
     [self.ptl_autoLayoutDanceTimer invalidate];
     objc_setAssociatedObject(self, (__bridge const void *)(kPTLAutoLayoutDanceTimer), timer, OBJC_ASSOCIATION_RETAIN);
+}
+
+#pragma mark - Public
+
+- (void)ptl_identifyViewsWithAmbiguousLayout {
+    if (self.hasAmbiguousLayout) {
+        [self ptl_showDebugBorder];
+    } else {
+        [self ptl_hideDebugBorder];
+    }
+
+    for (UIView *view in self.subviews) {
+        [view ptl_identifyViewsWithAmbiguousLayout];
+    }
 }
 
 - (void)ptl_startAutoLayoutDance {

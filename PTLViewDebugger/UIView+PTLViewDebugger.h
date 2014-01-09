@@ -56,6 +56,11 @@
 @interface UIView (PTLViewDebugger_AutoLayout)
 
 /**
+ * Traverses the view hierarchy and draws a debug border if the view has ambiguous layout.
+ */
+- (void)ptl_identifyViewsWithAmbiguousLayout;
+
+/**
  * Starts repeatedly exercising ambiguity in the layout of the current view.
  */
 - (void)ptl_startAutoLayoutDance;
