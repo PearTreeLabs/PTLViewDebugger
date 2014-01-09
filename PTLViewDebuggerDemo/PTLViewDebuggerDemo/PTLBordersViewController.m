@@ -20,7 +20,7 @@
 - (id)init {
 	self = [super init];
 	if (self) {
-        self.tabBarItem.title = @"Borders";
+        self.title = @"Borders";
 	}
 
 	return self;
@@ -31,12 +31,23 @@
     [super viewDidLoad];
 
     self.items = @[@"Luke Skywalker", @"Han Solo", @"Chewbacca", @"Princess Leia", @"Obi-wan Kenobi", @"R2-D2", @"C-3P0"];
+
+    UISwitch *sw = [[UISwitch alloc] init];
+    sw.on = NO;
+    [sw addTarget:self action:@selector(switchToggled:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:sw];
+    self.navigationItem.rightBarButtonItem = barItem;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+#pragma mark - User Interaction
 
-    [self.view ptl_showDebugBorder:YES];
+- (void)switchToggled:(UISwitch *)sw {
+    if (sw.isOn) {
+        [self.view ptl_identifyViewLayout];
+    } else {
+        [self.view ptl_hideAllDebugBorders];
+    }
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
     NSLog(@"%@", [self.view performSelector:@selector(recursiveDescription)]);

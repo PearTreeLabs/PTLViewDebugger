@@ -17,12 +17,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     PTLBordersViewController *borders = [[PTLBordersViewController alloc] init];
+    UINavigationController *bordersNav = [[UINavigationController alloc] initWithRootViewController:borders];
     PTLAmbiguousViewController *ambiguous = [[PTLAmbiguousViewController alloc] init];
 
     UITabBarController *tab = [[UITabBarController alloc] init];
-    tab.viewControllers = @[borders, ambiguous];
+    tab.viewControllers = @[bordersNav, ambiguous];
     self.window.rootViewController = tab;
-    
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
